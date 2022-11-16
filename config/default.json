@@ -1,4 +1,5 @@
 {
     "jwtPrivateKey": "jwtprivatekey",
-    "db":"mongodb://localhost/pizza_app"
+    "db1":"mongodb://localhost/pizza_app",
+    "db2":"mongodb://localhost/pizza_app"
   }
