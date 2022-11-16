@@ -1,0 +1,4 @@
+{
+    "jwtPrivateKey": "jwtprivatekey",
+    "db":"mongodb://localhost/pizza_app"
+  }

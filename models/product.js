@@ -16,21 +16,18 @@ const productSchema = mongoose.Schema({
         required: true,
         minlength: 5,
         maxlength: 255,
-        unique: true
     },
     price: {
         type: Number,
         required: true,
         minlength: 5,
         maxlength: 255,
-        unique: true
     },
     vegnonveg: {
         type: String,
         required: true,
         minlength: 5,
         maxlength: 255,
-        unique: true
     }
 })
 
