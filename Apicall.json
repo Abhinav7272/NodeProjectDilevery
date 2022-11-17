@@ -1,0 +1,706 @@
+{
+	"info": {
+		"_postman_id": "bdd5501f-bbc8-4c42-ac91-26eb5cfb5c49",
+		"name": "Delivery_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20361449"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "AddUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"TestUser2\",\r\n    \"email\":\"TestUser2@test.com\",\r\n    \"gender\":\"Male\", \r\n    \"password\":\"Admin123@\",\r\n    \"isAdmin\" : false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AlluserForadmin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzcyMzEwNmM5Yjk0N2VlY2NiZTYzN2QiLCJpc0FkbWluIjp0cnVlLCJlbWFpbCI6IlRlc3RVc2VyMUB0ZXN0LmNvbSIsImlhdCI6MTY2ODQyODY0NH0.4OoEq7On5pc2Nu7FaV8VP2bdpPvA3Lo2OX-7YbnwACQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/users/alluser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"alluser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"TestUser3\",\r\n    \"email\":\"TestUser3@test.com\",\r\n    \"gender\":\"female\", \r\n    \"password\":\"Admin123@\",\r\n    \"isAdmin\" : false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/update/63723106c9b947eeccbe637d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"update",
+								"63723106c9b947eeccbe637d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GETUserWithIDAdmin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzcyMzEwNmM5Yjk0N2VlY2NiZTYzN2QiLCJpc0FkbWluIjp0cnVlLCJlbWFpbCI6IlRlc3RVc2VyM0B0ZXN0LmNvbSIsImlhdCI6MTY2ODQyOTQxN30.vkc43u_Tg183LkRyu7lqliQDeIwJPLIvA-kK94LEQzM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/users/user/63723106c9b947eeccbe637d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"user",
+								"63723106c9b947eeccbe637d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DelUserForAdmin",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzcyMzEwNmM5Yjk0N2VlY2NiZTYzN2QiLCJpc0FkbWluIjp0cnVlLCJlbWFpbCI6IlRlc3RVc2VyMUB0ZXN0LmNvbSIsImlhdCI6MTY2ODQyODY0NH0.4OoEq7On5pc2Nu7FaV8VP2bdpPvA3Lo2OX-7YbnwACQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/users/63725e9d43471e4378b4abbd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"63725e9d43471e4378b4abbd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "AdminUserLogin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"TestUser3@test.com\",  \r\n    \"password\":\"Admin123@\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/logins/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"logins",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nonAdminUserLogin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"TestUser2@test.com\",  \r\n    \"password\":\"Admin123@\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/logins/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"logins",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shop",
+			"item": [
+				{
+					"name": "OneShopAnyone",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/shops/shop/63725ff8e35d59e3c41d2726",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shops",
+								"shop",
+								"63725ff8e35d59e3c41d2726"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateShopAdmin",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzcyMzEwNmM5Yjk0N2VlY2NiZTYzN2QiLCJpc0FkbWluIjp0cnVlLCJlbWFpbCI6IlRlc3RVc2VyMUB0ZXN0LmNvbSIsImlhdCI6MTY2ODQyODY0NH0.4OoEq7On5pc2Nu7FaV8VP2bdpPvA3Lo2OX-7YbnwACQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"shope4\",\r\n    \"address\":\"address4\",\r\n    \"pincode\":\"30000\",\r\n    \"noDeliveryBoy\":\"30000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/shops/update/63725ff8e35d59e3c41d2726",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shops",
+								"update",
+								"63725ff8e35d59e3c41d2726"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllShopAnyOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/shops/allshop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shops",
+								"allshop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddShopForAdmin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzcyMzEwNmM5Yjk0N2VlY2NiZTYzN2QiLCJpc0FkbWluIjp0cnVlLCJlbWFpbCI6IlRlc3RVc2VyMUB0ZXN0LmNvbSIsImlhdCI6MTY2ODQyODY0NH0.4OoEq7On5pc2Nu7FaV8VP2bdpPvA3Lo2OX-7YbnwACQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"shope3\",\r\n    \"address\":\"address4\",\r\n    \"pincode\":\"30000\",\r\n    \"noDeliveryBoy\":\"30000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/shops/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shops",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteShopAdmin",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzcyMzEwNmM5Yjk0N2VlY2NiZTYzN2QiLCJpc0FkbWluIjp0cnVlLCJlbWFpbCI6IlRlc3RVc2VyMUB0ZXN0LmNvbSIsImlhdCI6MTY2ODQyODY0NH0.4OoEq7On5pc2Nu7FaV8VP2bdpPvA3Lo2OX-7YbnwACQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/shops/63725ff8e35d59e3c41d2726",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shops",
+								"63725ff8e35d59e3c41d2726"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "addProductAdmin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzcyMzEwNmM5Yjk0N2VlY2NiZTYzN2QiLCJpc0FkbWluIjp0cnVlLCJlbWFpbCI6IlRlc3RVc2VyM0B0ZXN0LmNvbSIsImlhdCI6MTY2ODQ0ODMzMH0.NIgLdK_uNiEoVQyxDSbShO1LblKkxSGTw7OURpDUVCY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"pizza1\",\r\n    \"type\":\"large1\",\r\n    \"price\":\"30001\",\r\n    \"vegnonveg\":\"Nonveg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "productbyidEveryone",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/products/product/637280ad828acd5ae5de1f60\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"product",
+								"637280ad828acd5ae5de1f60\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allProductEveryOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/products/allproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"allproduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProductAdmin",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzcyMzEwNmM5Yjk0N2VlY2NiZTYzN2QiLCJpc0FkbWluIjp0cnVlLCJlbWFpbCI6IlRlc3RVc2VyM0B0ZXN0LmNvbSIsImlhdCI6MTY2ODQ0ODMzMH0.NIgLdK_uNiEoVQyxDSbShO1LblKkxSGTw7OURpDUVCY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"pizza4\",\r\n    \"type\":\"large1\",\r\n    \"price\":\"30001\",\r\n    \"vegnonveg\":\"Nonveg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/update/637280ad828acd5ae5de1f60",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"update",
+								"637280ad828acd5ae5de1f60"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProductAdmin",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzcyMzEwNmM5Yjk0N2VlY2NiZTYzN2QiLCJpc0FkbWluIjp0cnVlLCJlbWFpbCI6IlRlc3RVc2VyM0B0ZXN0LmNvbSIsImlhdCI6MTY2ODQ0ODMzMH0.NIgLdK_uNiEoVQyxDSbShO1LblKkxSGTw7OURpDUVCY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/products/637280ad828acd5ae5de1f60",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"637280ad828acd5ae5de1f60"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "addOrderOlnyUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzcyMzEwNmM5Yjk0N2VlY2NiZTYzN2QiLCJpc0FkbWluIjp0cnVlLCJlbWFpbCI6IlRlc3RVc2VyM0B0ZXN0LmNvbSIsImlhdCI6MTY2ODQ0ODMzMH0.NIgLdK_uNiEoVQyxDSbShO1LblKkxSGTw7OURpDUVCY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"product\": \"pizza2\",\r\n        \"customername\": \"TestUser3\",\r\n        \"shopname\": \"shope1\",\r\n        \"price\": \"20000\",\r\n        \"typedd\": \"dinein\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/orders/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allOrderseveryone",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/orders/allorder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders",
+								"allorder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orderbyideveryone",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/orders/order/637284c0f7672043b81ce4d9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders",
+								"order",
+								"637284c0f7672043b81ce4d9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrderOnlyUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzcyMzEwNmM5Yjk0N2VlY2NiZTYzN2QiLCJpc0FkbWluIjp0cnVlLCJlbWFpbCI6IlRlc3RVc2VyM0B0ZXN0LmNvbSIsImlhdCI6MTY2ODQ0ODMzMH0.NIgLdK_uNiEoVQyxDSbShO1LblKkxSGTw7OURpDUVCY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"product\": \"pizza1\",\r\n        \"customername\": \"TestUser3\",\r\n        \"shopname\": \"shope1\",\r\n        \"price\": \"20000\",\r\n        \"typedd\": \"dinein\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/orders/637287a46ecd0046fc8d8c53",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders",
+								"637287a46ecd0046fc8d8c53"
+							],
+							"query": [
+								{
+									"key": "x-auth-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzcyMzEwNmM5Yjk0N2VlY2NiZTYzN2QiLCJpc0FkbWluIjp0cnVlLCJlbWFpbCI6IlRlc3RVc2VyM0B0ZXN0LmNvbSIsImlhdCI6MTY2ODQ0ODMzMH0.NIgLdK_uNiEoVQyxDSbShO1LblKkxSGTw7OURpDUVCY",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateorderUserOnly",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzcyMzEwNmM5Yjk0N2VlY2NiZTYzN2QiLCJpc0FkbWluIjp0cnVlLCJlbWFpbCI6IlRlc3RVc2VyM0B0ZXN0LmNvbSIsImlhdCI6MTY2ODQ0ODMzMH0.NIgLdK_uNiEoVQyxDSbShO1LblKkxSGTw7OURpDUVCY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"product\": \"pizza1\",\r\n        \"customername\": \"TestUser3\",\r\n        \"shopname\": \"shope1\",\r\n        \"price\": \"20000\",\r\n        \"typedd\": \"dinein\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/orders/update/637284c0f7672043b81ce4d9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders",
+								"update",
+								"637284c0f7672043b81ce4d9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
